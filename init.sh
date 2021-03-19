@@ -12,7 +12,7 @@ fi
 
 if [ "$1" == "run" ];
 then
-    nodes_list = $(echo -e "$AZ_BATCH_NODE_LIST" | tr ';' ',')
+    nodes_list=$(echo -e "$AZ_BATCH_NODE_LIST" | tr ';' ',')
     echo $nodes_list
     wget https://cloudnativetestingprpsa.blob.core.windows.net/test/SampleApp2.jmx
     ./apache-jmeter-5.4.1/bin/jmeter -n -t SampleApp2.jmx -R $nodes_list
