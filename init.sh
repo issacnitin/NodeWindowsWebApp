@@ -16,5 +16,5 @@ then
     nodes_list=($(echo "$AZ_BATCH_NODE_LIST" | tr ';' ' '))
     echo "nodes_list ${nodes_list[0]} ${nodes_list[1]}"
     wget -q https://cloudnativetestingprpsa.blob.core.windows.net/test/202102191030128944_HighScaleSampleApp1_HighScaleSampleApp.jmx
-    ./apache-jmeter-5.4.1/bin/jmeter -n -t SampleApp2.jmx -Jserver.rmi.ssl.disable=true -R ${nodes_list[1]}
+    ./apache-jmeter-5.4.1/bin/jmeter -n -t 202102191030128944_HighScaleSampleApp1_HighScaleSampleApp.jmx -Jserver.rmi.ssl.disable=true -R ${nodes_list[1]}
 fi
