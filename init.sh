@@ -1,3 +1,4 @@
+printenv
 sudo apt-get update
 sudo apt-get install -y default-jre wget
 wget https://mirrors.estointernet.in/apache//jmeter/binaries/apache-jmeter-5.4.1.tgz
