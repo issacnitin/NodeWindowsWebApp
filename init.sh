@@ -1,4 +1,3 @@
-#!/bin/bash
 sudo apt-get update
 sudo apt-get install -y default-jre wget
 wget https://mirrors.estointernet.in/apache//jmeter/binaries/apache-jmeter-5.4.1.tgz
@@ -7,7 +6,7 @@ wget https://cloudnativetestingprpsa.blob.core.windows.net/test/SampleApp2.jmx
 
 ./apache-jmeter-5.4.1/bin/jmeter-server -Jserver.rmi.ssl.disable=true &
 
-if [[ $1 == "run" ]]
+if [ $1 == "run" ]
 then
     nodes_list = $(echo -e "$AZ_BATCH_NODE_LIST" | tr ';' ',')
     echo $nodes_list
