@@ -5,7 +5,11 @@ wget https://mirrors.estointernet.in/apache//jmeter/binaries/apache-jmeter-5.4.1
 tar -xvf apache-jmeter-5.4.1.tgz
 wget https://cloudnativetestingprpsa.blob.core.windows.net/test/SampleApp2.jmx
 
+if [ "$AZ_BATCH_IS_CURRENT_NODE_MASTER" == "true"]
+then
+else
 ./apache-jmeter-5.4.1/bin/jmeter-server -Jserver.rmi.ssl.disable=true &
+fi
 
 if [ $1 == "run" ]
 then
