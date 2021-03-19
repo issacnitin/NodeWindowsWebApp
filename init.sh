@@ -1,6 +1,6 @@
+#!/bin/bash
 sudo apt-get update
-sudo apt-get install wget
-sudo apt-get install default-jre
+sudo apt-get install -y default-jre wget
 wget https://mirrors.estointernet.in/apache//jmeter/binaries/apache-jmeter-5.4.1.tgz
 tar -xvf apache-jmeter-5.4.1.tgz
 wget https://cloudnativetestingprpsa.blob.core.windows.net/test/SampleApp2.jmx
