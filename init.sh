@@ -12,8 +12,9 @@ fi
 
 if [ "$1" == "run" ];
 then
+    echo "AZ_BATCH_NODE_LIST $AZ_BATCH_NODE_LIST"
     nodes_list=$(echo -e "$AZ_BATCH_NODE_LIST" | tr ';' ',')
-    echo $nodes_list
+    echo "nodes_list $nodes_list"
     wget https://cloudnativetestingprpsa.blob.core.windows.net/test/SampleApp2.jmx
-    ./apache-jmeter-5.4.1/bin/jmeter -n -t SampleApp2.jmx -R $nodes_list
+    ./apache-jmeter-5.4.1/bin/jmeter -n -t SampleApp2.jmx -Jserver.rmi.ssl.disable=true -R 172.18.0.4
 fi
